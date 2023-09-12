@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-09-12T08:35:21 IST" name="Default suite" finished-at="2023-09-12T08:37:09 IST" duration-ms="107314">
+    <groups>
+    </groups>
+    <test started-at="2023-09-12T08:35:21 IST" name="Default test" finished-at="2023-09-12T08:37:09 IST" duration-ms="107314">
+      <class name="TestCases.MyInfoTestCases">
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.MyInfoTestCases@4135c3b]" started-at="2023-09-12T08:35:21 IST" name="LaunchURL" finished-at="2023-09-12T08:35:29 IST" duration-ms="7908" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchURL -->
+        <test-method signature="verifyFillPersonalDetails()[pri:0, instance:TestCases.MyInfoTestCases@4135c3b]" started-at="2023-09-12T08:35:29 IST" name="verifyFillPersonalDetails" finished-at="2023-09-12T08:37:08 IST" duration-ms="98624" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFillPersonalDetails -->
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.MyInfoTestCases@4135c3b]" started-at="2023-09-12T08:37:08 IST" name="QuiteBrowser" finished-at="2023-09-12T08:37:09 IST" duration-ms="691" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+      </class> <!-- TestCases.MyInfoTestCases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
