@@ -34,5 +34,17 @@ public class CommonMethod {
 
 	}
 	
+	public static void HandleVisibiltyOfElement(Boolean Actual, Boolean Expected) {
+
+		SoftAssert softAssert = new SoftAssert();
+
+		Boolean Actual_ElementVisible = Actual;
+		Boolean Expected_ElementVisible = Expected;
+
+		softAssert.assertEquals(Actual_ElementVisible, Expected_ElementVisible);
+		softAssert.assertAll();
+	}
+
+	
 
 }

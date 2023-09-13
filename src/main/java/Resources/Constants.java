@@ -5,9 +5,12 @@ public class Constants {
 	
 				//	loginTestCases Page
 	
+	public static String Expected_LoginText = "Login";
 	public static String ValidUserName = "Admin";
 	public static String ValidPassword = "admin123";  
 	public static String Expected_PageText = "Dashboard";
+	public static String Expected_UserNameLabel = "Username";
+	public static String Expected_PasswodLabelName = "Password"; 
 	
 	public static String InvalidUserName = "Admin345";
 	public static String InvalidPassword = "admin12321";  
@@ -29,6 +32,20 @@ public class Constants {
 	public static String chooseMaterial_Status_Dropdown = "Single";
 	public static String EnterMilitary_Service = "Yes";
 	public static String choose_Blood_Type = "B+";
+	
+				//	ForgotYourPasswordTestCase Page
+	
+	public static String Expected_ResetPasswordText = "Reset Password";
+	public static String Expected_ParagraphText = "Please enter your username to identify your account to reset your password";
+	public static String Expected_UserNameText = "Username";
+	public static String Expected_ForgotPassword_UserName = "Vijay Kale";
+	public static String Expected_RestPassword_Successfully_Message = "Reset Password link sent successfully";
+	
+	
+				//	AdminPageObject Page
+	
+	public static String Expected_AdminText = "Admin";
+	public static String Expected_User = "Users";
 	
 	
 	
