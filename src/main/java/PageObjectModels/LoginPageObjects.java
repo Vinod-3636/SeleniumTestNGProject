@@ -19,13 +19,11 @@ public class LoginPageObjects {
 	
 	private By UserNameLabelIcon = By.xpath("//i[@class='oxd-icon bi-person oxd-input-group__label-icon']");
 	private By UserNameLabel = By.xpath("//label[text()='Username']");
+	private By UserNameTextBox = By.xpath("//input[@name='username']");
 	
 	private By PasswordLabelIcon = By.xpath("//i[@class='oxd-icon bi-key oxd-input-group__label-icon']");
 	private By PasswodLabelName = By.xpath("//label[text()='Password']"); 
-	
-	private By UserName = By.xpath("//input[@name='username']");
-	private By Password = By.xpath("//input[@type='password']");
-	
+	private By PasswordTextBox = By.xpath("//input[@type='password']");
 	
 	private By Login = By.xpath("//button[@type='submit']");
 	private By Actual_Page_Text = By.xpath("//h6[text()='Dashboard']");
@@ -35,6 +33,7 @@ public class LoginPageObjects {
 		//	Create a method to perform operation 
 	
 	public WebElement IsOrangeHRMLogoDisplayed() {
+		
 		return driver.findElement(OrangeHRMLogo);
 		
 	}
@@ -54,6 +53,11 @@ public class LoginPageObjects {
 		
 	}
 	
+	public WebElement EnterUserName() {
+		 return driver.findElement(UserNameTextBox);
+
+	}
+	
 	public WebElement isPasswordLabelIconDisplayed() {
 		return driver.findElement(PasswordLabelIcon);
 		
@@ -65,13 +69,10 @@ public class LoginPageObjects {
 		
 	}
 	
-	public WebElement EnterUserName() {
-		return driver.findElement(UserName);
 
-	}
 
 	public WebElement EnterPassword() {
-		return driver.findElement(Password);
+		return driver.findElement(PasswordTextBox);
 
 	}
 	

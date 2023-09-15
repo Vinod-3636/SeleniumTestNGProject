@@ -22,8 +22,10 @@ public class ForgotYourPasswordPageOjects {
 	private By UserNameIcon = By.xpath("//i[@class='oxd-icon bi-person oxd-input-group__label-icon']");
 	private By UserNameText = By.xpath("//label[@class='oxd-label']");
 	private By UserNameTextField = By.xpath("//div[@data-v-957b4417]/input");
-	private By Cancelbutton = By.xpath("//button[@type='button']");
+	private By CancelButton = By.xpath("//button[@type='button']");
+	private By LoginText = By.xpath("//h5[@class='oxd-text oxd-text--h5 orangehrm-login-title']");
 	private By ResetPasswordButton = By.xpath("//button[@type='submit']");
+	private By ResetButtonErrorText = By.xpath("//span[text()='Required']");
 	private By ResetPasswordLinkSentSuccessfully_Message = By.xpath("//h6[text()='Reset Password link sent successfully']");
 
 	// Create a method to perform operation
@@ -58,14 +60,24 @@ public class ForgotYourPasswordPageOjects {
 
 	}
 
-	public WebElement isCancelbuttonDisplayed() {
-		return driver.findElement(Cancelbutton);
+	public WebElement CancelButton() {
+		return driver.findElement(CancelButton);
 
 	}
+	
+	public WebElement IsLoginTextDisplayed() {
+		return driver.findElement(LoginText);
+		
+	}
 
-	public WebElement isResetPasswordButtonDisplayed() {
+	public WebElement ResetPasswordButton() {
 		return driver.findElement(ResetPasswordButton);
 
+	}
+	
+	public WebElement ResetButtonErrorText() {
+		return driver.findElement(ResetButtonErrorText);
+		
 	}
 	
 	public WebElement RestPassword_Successfully_Message() {

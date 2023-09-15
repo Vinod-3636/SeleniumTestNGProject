@@ -40,6 +40,7 @@ public class Constants {
 	public static String Expected_UserNameText = "Username";
 	public static String Expected_ForgotPassword_UserName = "Vijay Kale";
 	public static String Expected_RestPassword_Successfully_Message = "Reset Password link sent successfully";
+	public static String Expected_ResetButtonErrorText = "Required";
 	
 	
 				//	AdminPageObject Page

@@ -11,8 +11,8 @@ import Resources.Constants;
 
 public class ForgotYourPasswordTestCase extends BaseClass {
 
-	@Test
-	public void verifyResetPasswordPage() throws InterruptedException {
+	@Test(priority = 0)
+	public void verifyVisibilityOfwebElement() throws InterruptedException {
 
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
@@ -22,46 +22,77 @@ public class ForgotYourPasswordTestCase extends BaseClass {
 		fyppo.clickOnForgotYourPasswordLink().click();
 		Thread.sleep(2000);
 
-		fyppo.isResetPasswordTextDisplayed().isDisplayed();
-		CommonMethod.HandleSoftAssertion(fyppo.isResetPasswordTextDisplayed().getText(),Constants.Expected_ResetPasswordText);
+		boolean ResetPasswordTextDisplayed = fyppo.isResetPasswordTextDisplayed().isDisplayed();
+		Thread.sleep(2000);
+		CommonMethod.HandleVisibiltyOfElement(ResetPasswordTextDisplayed, true);
+
+		boolean ParagraphTextDisplayed = fyppo.isParagraphTextDisplayed().isDisplayed();
+		Thread.sleep(2000);
+		CommonMethod.HandleVisibiltyOfElement(ParagraphTextDisplayed, true);
+
+		boolean UserNameIconDisplayed = fyppo.isUserNameIconDisplayed().isDisplayed();
+		Thread.sleep(2000);
+		CommonMethod.HandleVisibiltyOfElement(UserNameIconDisplayed, true);
+
+		boolean UserNameTextDisplayed = fyppo.isUserNameText().isDisplayed();
+		Thread.sleep(2000);
+		CommonMethod.HandleVisibiltyOfElement(UserNameTextDisplayed, true);
+
+		boolean CancelbuttonDisplayed = fyppo.CancelButton().isDisplayed();
+		Thread.sleep(2000);
+		CommonMethod.HandleVisibiltyOfElement(CancelbuttonDisplayed, true);
+
+		boolean ResetPasswordButtonDisplayed = fyppo.ResetPasswordButton().isDisplayed();
+		Thread.sleep(2000);
+		CommonMethod.HandleVisibiltyOfElement(ResetPasswordButtonDisplayed, true);
+
+	}
+
+	@Test(priority = 1)
+	public void verifyCancelButton() throws InterruptedException {
+
+		driver.manage().window().maximize();
 		Thread.sleep(2000);
 
-		fyppo.isParagraphTextDisplayed().isDisplayed();
-		CommonMethod.HandleSoftAssertion(fyppo.isParagraphTextDisplayed().getText(), Constants.Expected_ParagraphText);
+		ForgotYourPasswordPageOjects fyppo = new ForgotYourPasswordPageOjects(driver);
+
+		fyppo.clickOnForgotYourPasswordLink().click();
 		Thread.sleep(2000);
 
-		fyppo.isUserNameIconDisplayed().isDisplayed();
-		SoftAssert softAssert = new SoftAssert();
-		softAssert.assertTrue(fyppo.isUserNameIconDisplayed().isDisplayed());
-		softAssert.assertAll();
+		fyppo.CancelButton().click();
+		Thread.sleep(5000);
 
-		fyppo.isUserNameText().isDisplayed();
-		CommonMethod.HandleSoftAssertion(fyppo.isUserNameText().getText(), Constants.Expected_UserNameText);
-		
+		CommonMethod.HandleSoftAssertion(fyppo.IsLoginTextDisplayed().getText(), Constants.Expected_LoginText);
+
+	}
+
+	@Test(priority = 2)
+	public void verifyResetPasswordButton() throws InterruptedException {
+
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+
+		ForgotYourPasswordPageOjects fyppo = new ForgotYourPasswordPageOjects(driver);
+
+		fyppo.clickOnForgotYourPasswordLink().click();
+		Thread.sleep(2000);
+
+		fyppo.ResetPasswordButton().click();
+		Thread.sleep(5000);
+
+		CommonMethod.HandleSoftAssertion(fyppo.ResetButtonErrorText().getText(),
+				Constants.Expected_ResetButtonErrorText);
+
 		fyppo.enterUserName().sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		Thread.sleep(2000);
 		fyppo.enterUserName().sendKeys(Constants.Expected_ForgotPassword_UserName);
 		Thread.sleep(2000);
-		
-		fyppo.enterUserName().isDisplayed();
-		SoftAssert softAssert2 = new SoftAssert();
-		softAssert2.assertTrue(fyppo.enterUserName().isDisplayed());
-		softAssert2.assertAll();
-		
-		fyppo.isCancelbuttonDisplayed().isDisplayed();
-		SoftAssert softAssert3 = new SoftAssert();
-		softAssert3.assertTrue(fyppo.isCancelbuttonDisplayed().isDisplayed());
-		softAssert3.assertAll();
-		
-		fyppo.isResetPasswordButtonDisplayed().isDisplayed();
-		SoftAssert softAssert4 = new SoftAssert();
-		softAssert4.assertTrue(fyppo.isResetPasswordButtonDisplayed().isDisplayed());
-		softAssert4.assertAll();
-		
-		fyppo.isResetPasswordButtonDisplayed().click();
+
+		fyppo.ResetPasswordButton().click();
 		Thread.sleep(2000);
-		
-		CommonMethod.HandleSoftAssertion(fyppo.RestPassword_Successfully_Message().getText(), Constants.Expected_RestPassword_Successfully_Message);
+
+		CommonMethod.HandleSoftAssertion(fyppo.RestPassword_Successfully_Message().getText(),
+				Constants.Expected_RestPassword_Successfully_Message);
 
 	}
 

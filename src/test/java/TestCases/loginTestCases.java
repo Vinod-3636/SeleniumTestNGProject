@@ -17,68 +17,39 @@ public class loginTestCases extends BaseClass {
 	public void VerifyIsElementDisplayed() throws InterruptedException {
 
 		driver.manage().window().maximize();
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 
 		LoginPageObjects lpo = new LoginPageObjects(driver);
 
 		boolean HRMLogo = lpo.IsOrangeHRMLogoDisplayed().isDisplayed();
-	//	System.out.println(HRMLogo);
-		Thread.sleep(2000);
+		// System.out.println(HRMLogo);
+		
 		CommonMethod.HandleVisibiltyOfElement(HRMLogo, true);
 
 		boolean LoginText = lpo.IsOrangeHRMLogoDisplayed().isDisplayed();
-	//	System.out.println(LoginText);
+		// System.out.println(LoginText);
 		Thread.sleep(2000);
 		CommonMethod.HandleVisibiltyOfElement(LoginText, true);
-		
+
 		boolean UserNameIcon = lpo.isUserNameLabelIconDisplayed().isDisplayed();
 		Thread.sleep(2000);
 		CommonMethod.HandleVisibiltyOfElement(UserNameIcon, true);
-		
+
 		boolean UserNameLabel = lpo.isUserNameLabelDisplayed().isDisplayed();
 		Thread.sleep(2000);
 		CommonMethod.HandleVisibiltyOfElement(UserNameLabel, true);
-		
+
 		boolean PasswordLabelIcon = lpo.isPasswordLabelIconDisplayed().isDisplayed();
 		Thread.sleep(2000);
 		CommonMethod.HandleVisibiltyOfElement(PasswordLabelIcon, true);
-		
-		
 
-
-		
-	}
-
-
-
-
-	
-	@Test(priority = 4)
-	public void verifyIsPasswordLabelIconDisplayed() throws InterruptedException {
-		
-		driver.manage().window().maximize();
+		boolean PasswodLabelNamed = lpo.isPasswodLabelNamedisplayed().isDisplayed();
 		Thread.sleep(2000);
+		CommonMethod.HandleVisibiltyOfElement(PasswodLabelNamed, true);
 
-		LoginPageObjects lpo = new LoginPageObjects(driver);
-
-		SoftAssert softAssert = new SoftAssert();
-		softAssert.assertTrue(lpo.isPasswordLabelIconDisplayed().isDisplayed());
-		softAssert.assertAll();
-	}
-	
-	@Test(priority = 5)
-	public void verifyIsPasswodLabelNamedisplayed() throws InterruptedException {
-		
-		driver.manage().window().maximize();
-		Thread.sleep(2000);
-
-		LoginPageObjects lpo = new LoginPageObjects(driver);
-		
-		CommonMethod.HandleSoftAssertion(lpo.isPasswodLabelNamedisplayed().getText(), Constants.Expected_PasswodLabelName);
-		
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 1)
 	public void varifyValidLogin() throws IOException, InterruptedException {
 
 		// initializeDriver();
@@ -108,16 +79,36 @@ public class loginTestCases extends BaseClass {
 		// driver.close();
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 2)
 	public void varifyInvalidLogin() throws InterruptedException {
 
 		Thread.sleep(2000);
 
 		LoginPageObjects lpo = new LoginPageObjects(driver);
-		lpo.EnterUserName().sendKeys(Constants.InvalidUserName);
+		
+		CommonMethod.setText(lpo.EnterUserName(), Constants.InvalidUserName);
+		CommonMethod.waitForElementToVisible(lpo.EnterUserName(), driver, 10);
+		
+		CommonMethod.setText(lpo.EnterPassword(), Constants.InvalidPassword);
+		CommonMethod.waitForElementToVisible(lpo.EnterPassword(), driver, 10);
+		
+	//	lpo.EnterUserName().sendKeys(Constants.InvalidUserName);
 		lpo.EnterPassword().sendKeys(Constants.InvalidPassword);
 		lpo.ClickOnLogin().click();
-		Thread.sleep(5000);
+		
+		
+		CommonMethod.HandleSoftAssertion(lpo.Error_Text().getText(), Constants.Expected_ErrorText);
+		
+		lpo.EnterUserName().sendKeys(Constants.ValidUserName);
+		lpo.EnterPassword().sendKeys(Constants.InvalidPassword);
+		lpo.ClickOnLogin();
+		Thread.sleep(2000);
+		
+		CommonMethod.HandleSoftAssertion(lpo.Error_Text().getText(), Constants.Expected_ErrorText);
+		
+		lpo.EnterUserName().sendKeys(Constants.InvalidUserName);
+		lpo.EnterPassword().sendKeys(Constants.ValidPassword);
+		Thread.sleep(2000);
 
 		CommonMethod.HandleSoftAssertion(lpo.Error_Text().getText(), Constants.Expected_ErrorText);
 
