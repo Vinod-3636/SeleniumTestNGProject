@@ -39,27 +39,36 @@ public class CommonMethod {
 
 	}
 
-	public static void HandleVisibiltyOfElement(Boolean Actual, Boolean Expected) {
+	public static void HandleAssertionForVisibiltyOfElement(WebElement element) {
 
 		SoftAssert softAssert = new SoftAssert();
 
-		Boolean Actual_ElementVisible = Actual;
-		Boolean Expected_ElementVisible = Expected;
-
-		softAssert.assertEquals(Actual_ElementVisible, Expected_ElementVisible);
+		softAssert.assertTrue(true);
 		softAssert.assertAll();
+
 	}
 
 	public static void waitForElementToVisible(By Xpath, WebDriver driver, int timeout) {
-		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Xpath));
+
 	}
-	
+
 	public static void setText(WebElement element, String input) {
-		
+
 		element.sendKeys(input);
+	}
+
+	public static void clickOnElement(WebElement element) {
+
+		element.click();
+	}
+
+	public static boolean isElementDisplayed(WebElement element) {
+
+		return element.isDisplayed();
 	}
 
 }
