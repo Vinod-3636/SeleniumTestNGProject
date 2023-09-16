@@ -45,8 +45,13 @@ public class Constants {
 	
 				//	AdminPageObject Page
 	
-	public static String Expected_AdminText = "Admin";
-	public static String Expected_User = "Users";
+	public static String Expected_DashboardText = "Dashboard";
+	public static String Expected_UserManagement = "User Management";
+	public static String Expected_UserText = "Users";
+	public static String UserName_TextField = "Admin";
+	public static String Choose_UserRole = "Admin";
+	public static String EmployeeName_TextField = "";
+	public static String Choose_Status_Dropdown = "Enabled";
 	
 	
 	

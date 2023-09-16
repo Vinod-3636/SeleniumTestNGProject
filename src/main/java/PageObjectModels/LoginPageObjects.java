@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPageObjects {
+import Resources.CommonMethod;
+
+public class LoginPageObjects extends CommonMethod {
 
 	WebDriver driver;
 
@@ -33,61 +35,70 @@ public class LoginPageObjects {
 		//	Create a method to perform operation 
 	
 	public WebElement IsOrangeHRMLogoDisplayed() {
-		
+		waitForElementToVisible(OrangeHRMLogo, driver, 10);
 		return driver.findElement(OrangeHRMLogo);
 		
 	}
 	
 	public WebElement IsLoginTextDisplayed() {
+		waitForElementToVisible(LoginText, driver, 10);
 		return driver.findElement(LoginText);
 		
 	}
 	
 	public WebElement isUserNameLabelIconDisplayed() {
+		waitForElementToVisible(UserNameLabelIcon, driver, 10);
 		return driver.findElement(UserNameLabelIcon);
 		
 	}
 	
 	public WebElement isUserNameLabelDisplayed() {
+		waitForElementToVisible(UserNameLabel, driver, 10);
 		return driver.findElement(UserNameLabel);
 		
 	}
 	
 	public WebElement EnterUserName() {
+		waitForElementToVisible(UserNameTextBox, driver, 10);
 		 return driver.findElement(UserNameTextBox);
 
 	}
 	
+
 	public WebElement isPasswordLabelIconDisplayed() {
+		waitForElementToVisible(PasswordLabelIcon, driver, 10);
 		return driver.findElement(PasswordLabelIcon);
 		
 	}
 	
 	public WebElement isPasswodLabelNamedisplayed() {
+		waitForElementToVisible(PasswodLabelName, driver, 10);
 		return driver.findElement(PasswodLabelName);
 		
 		
 	}
 	
-
-
 	public WebElement EnterPassword() {
+		waitForElementToVisible(PasswordTextBox, driver, 10);
 		return driver.findElement(PasswordTextBox);
 
 	}
 	
 	public WebElement ClickOnLogin() {
+		waitForElementToVisible(Login, driver, 10);
 		return driver.findElement(Login);		
 		
 	}
 	
 	public WebElement Actual_Text() {
+		waitForElementToVisible(Actual_Page_Text, driver, 10);
 		return driver.findElement(Actual_Page_Text);
 		
 		
 	}
 	
 	public WebElement Error_Text() {
+		waitForElementToVisible(Error_Text_Message, driver, 10);
 		return driver.findElement(Error_Text_Message);
 		
 	}

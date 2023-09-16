@@ -17,35 +17,32 @@ public class loginTestCases extends BaseClass {
 	public void VerifyIsElementDisplayed() throws InterruptedException {
 
 		driver.manage().window().maximize();
-	//	Thread.sleep(2000);
 
 		LoginPageObjects lpo = new LoginPageObjects(driver);
 
-		boolean HRMLogo = lpo.IsOrangeHRMLogoDisplayed().isDisplayed();
-		// System.out.println(HRMLogo);
-		
-		CommonMethod.HandleVisibiltyOfElement(HRMLogo, true);
+		CommonMethod.isElementDisplayed(lpo.IsOrangeHRMLogoDisplayed());
+	//	System.out.println(CommonMethod.isElementDisplayed(lpo.IsOrangeHRMLogoDisplayed()));
+		CommonMethod.HandleAssertionForVisibiltyOfElement(lpo.IsOrangeHRMLogoDisplayed());
 
-		boolean LoginText = lpo.IsOrangeHRMLogoDisplayed().isDisplayed();
-		// System.out.println(LoginText);
-		Thread.sleep(2000);
-		CommonMethod.HandleVisibiltyOfElement(LoginText, true);
+		CommonMethod.isElementDisplayed(lpo.IsLoginTextDisplayed());
+	//	System.out.println(CommonMethod.isElementDisplayed(lpo.IsLoginTextDisplayed()));
+		CommonMethod.HandleAssertionForVisibiltyOfElement(lpo.IsLoginTextDisplayed());
 
-		boolean UserNameIcon = lpo.isUserNameLabelIconDisplayed().isDisplayed();
-		Thread.sleep(2000);
-		CommonMethod.HandleVisibiltyOfElement(UserNameIcon, true);
+		CommonMethod.isElementDisplayed(lpo.isUserNameLabelIconDisplayed());
+	//	System.out.println(CommonMethod.isElementDisplayed(lpo.isUserNameLabelIconDisplayed()));
+		CommonMethod.HandleAssertionForVisibiltyOfElement(lpo.isUserNameLabelIconDisplayed());
 
-		boolean UserNameLabel = lpo.isUserNameLabelDisplayed().isDisplayed();
-		Thread.sleep(2000);
-		CommonMethod.HandleVisibiltyOfElement(UserNameLabel, true);
+		CommonMethod.isElementDisplayed(lpo.isUserNameLabelDisplayed());
+	//	System.out.println(CommonMethod.isElementDisplayed(lpo.isUserNameLabelDisplayed()));
+		CommonMethod.HandleAssertionForVisibiltyOfElement(lpo.isUserNameLabelDisplayed());
 
-		boolean PasswordLabelIcon = lpo.isPasswordLabelIconDisplayed().isDisplayed();
-		Thread.sleep(2000);
-		CommonMethod.HandleVisibiltyOfElement(PasswordLabelIcon, true);
+		CommonMethod.isElementDisplayed(lpo.isPasswordLabelIconDisplayed());
+	//	System.out.println(CommonMethod.isElementDisplayed(lpo.isPasswordLabelIconDisplayed()));
+		CommonMethod.HandleAssertionForVisibiltyOfElement(lpo.isPasswordLabelIconDisplayed());
 
-		boolean PasswodLabelNamed = lpo.isPasswodLabelNamedisplayed().isDisplayed();
-		Thread.sleep(2000);
-		CommonMethod.HandleVisibiltyOfElement(PasswodLabelNamed, true);
+		CommonMethod.isElementDisplayed(lpo.isPasswodLabelNamedisplayed());
+	//	System.out.println(CommonMethod.isElementDisplayed(lpo.isPasswodLabelNamedisplayed()));
+		CommonMethod.HandleAssertionForVisibiltyOfElement(lpo.isPasswodLabelNamedisplayed());
 
 	}
 
@@ -55,14 +52,12 @@ public class loginTestCases extends BaseClass {
 		// initializeDriver();
 		driver.manage().window().maximize();
 		// driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		Thread.sleep(2000);
 
 		LoginPageObjects lpo = new LoginPageObjects(driver);
 
-		lpo.EnterUserName().sendKeys(Constants.ValidUserName);
-		lpo.EnterPassword().sendKeys(Constants.ValidPassword);
-		lpo.ClickOnLogin().click();
-		Thread.sleep(5000);
+		CommonMethod.setText(lpo.EnterUserName(), Constants.ValidUserName);
+		CommonMethod.setText(lpo.EnterPassword(), Constants.ValidPassword);
+		CommonMethod.clickOnElement(lpo.ClickOnLogin());
 
 		CommonMethod.HandleSoftAssertion(lpo.Actual_Text().getText(), Constants.Expected_PageText);
 
@@ -82,33 +77,23 @@ public class loginTestCases extends BaseClass {
 	@Test(priority = 2)
 	public void varifyInvalidLogin() throws InterruptedException {
 
-		Thread.sleep(2000);
-
 		LoginPageObjects lpo = new LoginPageObjects(driver);
-		
+
 		CommonMethod.setText(lpo.EnterUserName(), Constants.InvalidUserName);
-		CommonMethod.waitForElementToVisible(lpo.EnterUserName(), driver, 10);
-		
 		CommonMethod.setText(lpo.EnterPassword(), Constants.InvalidPassword);
-		CommonMethod.waitForElementToVisible(lpo.EnterPassword(), driver, 10);
-		
-	//	lpo.EnterUserName().sendKeys(Constants.InvalidUserName);
-		lpo.EnterPassword().sendKeys(Constants.InvalidPassword);
-		lpo.ClickOnLogin().click();
-		
-		
+		CommonMethod.clickOnElement(lpo.ClickOnLogin());
+
 		CommonMethod.HandleSoftAssertion(lpo.Error_Text().getText(), Constants.Expected_ErrorText);
-		
-		lpo.EnterUserName().sendKeys(Constants.ValidUserName);
-		lpo.EnterPassword().sendKeys(Constants.InvalidPassword);
-		lpo.ClickOnLogin();
-		Thread.sleep(2000);
-		
+
+		CommonMethod.setText(lpo.EnterUserName(), Constants.ValidUserName);
+		CommonMethod.setText(lpo.EnterPassword(), Constants.InvalidPassword);
+		CommonMethod.clickOnElement(lpo.ClickOnLogin());
+
 		CommonMethod.HandleSoftAssertion(lpo.Error_Text().getText(), Constants.Expected_ErrorText);
-		
-		lpo.EnterUserName().sendKeys(Constants.InvalidUserName);
-		lpo.EnterPassword().sendKeys(Constants.ValidPassword);
-		Thread.sleep(2000);
+
+		CommonMethod.setText(lpo.EnterUserName(), Constants.InvalidUserName);
+		CommonMethod.setText(lpo.EnterPassword(), Constants.ValidPassword);
+		CommonMethod.clickOnElement(lpo.ClickOnLogin());
 
 		CommonMethod.HandleSoftAssertion(lpo.Error_Text().getText(), Constants.Expected_ErrorText);
 
