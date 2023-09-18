@@ -1,25 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-12T08:35:21 IST" name="Default suite" finished-at="2023-09-12T08:37:09 IST" duration-ms="107314">
+  <suite started-at="2023-09-18T08:49:25 IST" name="Suite" finished-at="2023-09-18T08:53:34 IST" duration-ms="248913">
     <groups>
     </groups>
-    <test started-at="2023-09-12T08:35:21 IST" name="Default test" finished-at="2023-09-12T08:37:09 IST" duration-ms="107314">
-      <class name="TestCases.MyInfoTestCases">
-        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.MyInfoTestCases@4135c3b]" started-at="2023-09-12T08:35:21 IST" name="LaunchURL" finished-at="2023-09-12T08:35:29 IST" duration-ms="7908" status="PASS">
+    <test started-at="2023-09-18T08:49:25 IST" name="Test" finished-at="2023-09-18T08:53:34 IST" duration-ms="248913">
+      <class name="TestCases.AdminPageTestCase">
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.AdminPageTestCase@4c583ecf]" started-at="2023-09-18T08:49:26 IST" name="LaunchURL" finished-at="2023-09-18T08:49:54 IST" duration-ms="27951" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchURL -->
-        <test-method signature="verifyFillPersonalDetails()[pri:0, instance:TestCases.MyInfoTestCases@4135c3b]" started-at="2023-09-12T08:35:29 IST" name="verifyFillPersonalDetails" finished-at="2023-09-12T08:37:08 IST" duration-ms="98624" status="PASS">
+        <test-method signature="verifyAdminPage()[pri:0, instance:TestCases.AdminPageTestCase@4c583ecf]" started-at="2023-09-18T08:49:54 IST" name="verifyAdminPage" finished-at="2023-09-18T08:50:09 IST" duration-ms="15812" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAdminPage -->
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.AdminPageTestCase@4c583ecf]" started-at="2023-09-18T08:50:09 IST" name="QuiteBrowser" finished-at="2023-09-18T08:50:11 IST" duration-ms="1526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.AdminPageTestCase@4c583ecf]" started-at="2023-09-18T08:50:11 IST" name="LaunchURL" finished-at="2023-09-18T08:50:17 IST" duration-ms="5742" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchURL -->
+        <test-method signature="verifyVisibilityOfWebElement()[pri:0, instance:TestCases.AdminPageTestCase@4c583ecf]" started-at="2023-09-18T08:50:17 IST" name="verifyVisibilityOfWebElement" finished-at="2023-09-18T08:50:20 IST" duration-ms="3491" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyVisibilityOfWebElement -->
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.AdminPageTestCase@4c583ecf]" started-at="2023-09-18T08:50:20 IST" name="QuiteBrowser" finished-at="2023-09-18T08:50:21 IST" duration-ms="505" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+      </class> <!-- TestCases.AdminPageTestCase -->
+      <class name="TestCases.MyInfoTestCases">
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.MyInfoTestCases@557caf28]" started-at="2023-09-18T08:51:38 IST" name="LaunchURL" finished-at="2023-09-18T08:51:50 IST" duration-ms="12115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchURL -->
+        <test-method signature="verifyFillPersonalDetails()[pri:0, instance:TestCases.MyInfoTestCases@557caf28]" started-at="2023-09-18T08:51:50 IST" name="verifyFillPersonalDetails" finished-at="2023-09-18T08:53:33 IST" duration-ms="102824" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFillPersonalDetails -->
-        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.MyInfoTestCases@4135c3b]" started-at="2023-09-12T08:37:08 IST" name="QuiteBrowser" finished-at="2023-09-12T08:37:09 IST" duration-ms="691" status="PASS">
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.MyInfoTestCases@557caf28]" started-at="2023-09-18T08:53:33 IST" name="QuiteBrowser" finished-at="2023-09-18T08:53:34 IST" duration-ms="1274" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- QuiteBrowser -->
       </class> <!-- TestCases.MyInfoTestCases -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="TestCases.loginTestCases">
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.loginTestCases@75d4a5c2]" started-at="2023-09-18T08:50:53 IST" name="LaunchURL" finished-at="2023-09-18T08:50:59 IST" duration-ms="6064" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchURL -->
+        <test-method signature="VerifyIsElementDisplayed()[pri:0, instance:TestCases.loginTestCases@75d4a5c2]" started-at="2023-09-18T08:50:59 IST" name="VerifyIsElementDisplayed" finished-at="2023-09-18T08:51:01 IST" duration-ms="2248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyIsElementDisplayed -->
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.loginTestCases@75d4a5c2]" started-at="2023-09-18T08:51:01 IST" name="QuiteBrowser" finished-at="2023-09-18T08:51:02 IST" duration-ms="503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.loginTestCases@75d4a5c2]" started-at="2023-09-18T08:51:02 IST" name="LaunchURL" finished-at="2023-09-18T08:51:15 IST" duration-ms="12828" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchURL -->
+        <test-method signature="varifyValidLogin()[pri:1, instance:TestCases.loginTestCases@75d4a5c2]" started-at="2023-09-18T08:51:15 IST" name="varifyValidLogin" finished-at="2023-09-18T08:51:19 IST" duration-ms="4012" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- varifyValidLogin -->
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.loginTestCases@75d4a5c2]" started-at="2023-09-18T08:51:19 IST" name="QuiteBrowser" finished-at="2023-09-18T08:51:19 IST" duration-ms="711" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.loginTestCases@75d4a5c2]" started-at="2023-09-18T08:51:19 IST" name="LaunchURL" finished-at="2023-09-18T08:51:26 IST" duration-ms="6709" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchURL -->
+        <test-method signature="varifyInvalidLogin()[pri:2, instance:TestCases.loginTestCases@75d4a5c2]" started-at="2023-09-18T08:51:26 IST" name="varifyInvalidLogin" finished-at="2023-09-18T08:51:37 IST" duration-ms="11203" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- varifyInvalidLogin -->
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.loginTestCases@75d4a5c2]" started-at="2023-09-18T08:51:37 IST" name="QuiteBrowser" finished-at="2023-09-18T08:51:38 IST" duration-ms="724" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+      </class> <!-- TestCases.loginTestCases -->
+      <class name="TestCases.ForgotYourPasswordTestCase">
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.ForgotYourPasswordTestCase@7c7a06ec]" started-at="2023-09-18T08:50:21 IST" name="LaunchURL" finished-at="2023-09-18T08:50:26 IST" duration-ms="5307" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchURL -->
+        <test-method signature="verifyVisibilityOfwebElement()[pri:0, instance:TestCases.ForgotYourPasswordTestCase@7c7a06ec]" started-at="2023-09-18T08:50:26 IST" name="verifyVisibilityOfwebElement" finished-at="2023-09-18T08:50:29 IST" duration-ms="3291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyVisibilityOfwebElement -->
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.ForgotYourPasswordTestCase@7c7a06ec]" started-at="2023-09-18T08:50:29 IST" name="QuiteBrowser" finished-at="2023-09-18T08:50:30 IST" duration-ms="700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.ForgotYourPasswordTestCase@7c7a06ec]" started-at="2023-09-18T08:50:30 IST" name="LaunchURL" finished-at="2023-09-18T08:50:37 IST" duration-ms="7502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchURL -->
+        <test-method signature="verifyCancelButton()[pri:1, instance:TestCases.ForgotYourPasswordTestCase@7c7a06ec]" started-at="2023-09-18T08:50:37 IST" name="verifyCancelButton" finished-at="2023-09-18T08:50:41 IST" duration-ms="3638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCancelButton -->
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.ForgotYourPasswordTestCase@7c7a06ec]" started-at="2023-09-18T08:50:41 IST" name="QuiteBrowser" finished-at="2023-09-18T08:50:42 IST" duration-ms="574" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:TestCases.ForgotYourPasswordTestCase@7c7a06ec]" started-at="2023-09-18T08:50:42 IST" name="LaunchURL" finished-at="2023-09-18T08:50:48 IST" duration-ms="6786" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchURL -->
+        <test-method signature="verifyResetPasswordButton()[pri:2, instance:TestCases.ForgotYourPasswordTestCase@7c7a06ec]" started-at="2023-09-18T08:50:48 IST" name="verifyResetPasswordButton" finished-at="2023-09-18T08:50:53 IST" duration-ms="4197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyResetPasswordButton -->
+        <test-method is-config="true" signature="QuiteBrowser()[pri:0, instance:TestCases.ForgotYourPasswordTestCase@7c7a06ec]" started-at="2023-09-18T08:50:53 IST" name="QuiteBrowser" finished-at="2023-09-18T08:50:53 IST" duration-ms="407" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QuiteBrowser -->
+      </class> <!-- TestCases.ForgotYourPasswordTestCase -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
